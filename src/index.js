@@ -18,7 +18,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 module.exports = {
-  version: '0.0.1',
+  version: '1.0.5',
   install,
   TreeTable
 }

@@ -43,7 +43,7 @@
 <script>
 
 export default {
-  name: 'TreeGrid',
+  name: 'ElementTreeTable',
   props: {
     // 是否使用树形结构
     treeStructure: {

@@ -7,10 +7,11 @@ import Vue from 'vue'
 import App from './App'
 
 import ElementUI from 'element-ui'
-import TreeGrid from '../lib/index'
+import TreeGrid from './index'
 
 Vue.use(ElementUI)
 Vue.use(TreeGrid)
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

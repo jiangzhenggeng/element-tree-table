@@ -3,7 +3,7 @@
 </style>
 <template>
   <div>
-    <tree-grid
+    <element-tree-table
       :columns="columns"
       :data-source="dataSource"
       :tree-structure="true"
