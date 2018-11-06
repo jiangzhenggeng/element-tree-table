@@ -3,7 +3,7 @@
 # [demos](https://jiangzhenggeng.github.io/element-tree-table/)
 
 ```bash
-npm -S element-tree-table
+npm i -S element-tree-table
 ```
 ```javascript
   props: {
