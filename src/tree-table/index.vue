@@ -42,7 +42,6 @@
 </template>
 <script>
 
-import {version} from 'element-ui'
 export default {
   name: 'TreeGrid',
   props: {
@@ -89,11 +88,6 @@ export default {
       }
     }
   },
-  data(){
-    return {
-      version
-    }
-  },
   computed: {
     data () {
       if (this.treeStructure) {
@@ -110,10 +104,10 @@ export default {
     // 显示行
     rowStyle (args) {
       let row = args
-      if (String(this.version || '2.0.0').split('.')[0] == 1){
-        row = args
-      } else {
+      if (typeof args === 'object' && args.row){
         row = args.row
+      } else {
+        row = args
       }
       row._show = row._parent
         ? row._parent._expanded && row._parent._show

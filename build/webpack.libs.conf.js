@@ -25,9 +25,7 @@ module.exports = merge({
     publicPath: '/dist/',
     filename: 'index.js',
     chunkFilename: '[id].js',
-    libraryTarget: 'umd',
-    library: 'ELEMENT',
-    umdNamedDefine: true
+    libraryTarget: 'umd'
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
