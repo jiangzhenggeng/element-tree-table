@@ -8,6 +8,7 @@ import App from './App'
 
 import ElementUI from 'element-ui'
 import TreeGrid from './index'
+import './a'
 
 Vue.use(ElementUI)
 Vue.use(TreeGrid)
@@ -18,5 +19,8 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   template: '<App/>',
-  components: { App }
+  components: {App}
 })
+
+
+
