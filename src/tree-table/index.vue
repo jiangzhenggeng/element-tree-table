@@ -1,5 +1,8 @@
 <template>
+  <!-- medium / small / mini -->
   <el-table
+    v-on="$listeners"
+    v-bind="$attrs"
     :border="border"
     :data="data"
     :row-style="_rowStyle"
@@ -15,7 +18,7 @@
       :width="column.width"
       :align="column.align"
       :fixed="column.fixed"
-      :show-overflow-tooltip="true"
+      :show-overflow-tooltip="!!column.overflowTooltip"
     >
       <template slot-scope="scope">
         <template v-if="treeStructure">
@@ -116,14 +119,14 @@ export default {
     // 行渲染样式
     rowStyle: {
       type: Function,
-      default(){
+      default () {
         return ''
       }
     },
     // 单元格渲染样式
     cellStyle: {
       type: Function,
-      default(){
+      default () {
         return ''
       }
     }
@@ -212,7 +215,7 @@ export default {
     createTreeStructureDate (list) {
       let temp = {}
       let tree = []
-      list.forEach((item,index) => {
+      list.forEach((item, index) => {
         temp[item[this.idKey]] = list[index]
       })
 
@@ -233,12 +236,9 @@ export default {
 </script>
 <style scoped lang="less">
   .show-child-btn {
-    @height: 22px;
-    display: inline-block;
+    display: inline;
+    padding: 1px 3px;
     cursor: pointer;
-    width: @height;
-    height: @height;
-    line-height: @height;
     text-align: center;
     border: 1px solid #c5c5c5;
     border-radius: 3px;
@@ -262,3 +262,4 @@ export default {
     height: 14px;
   }
 </style>
+

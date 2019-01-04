@@ -2,6 +2,64 @@
 
 # [demos](https://jiangzhenggeng.github.io/element-tree-table/)
 
+```html
+  
+  <template>
+    <el-table
+      :border="border"
+      :data="data"
+      :row-style="_rowStyle"
+      :cell-style="_cellStyle"
+      :max-height="_maxHeight"
+      ref="ElTable"
+    >
+      <el-table-column
+        v-for="(column, index) in columns"
+        v-if="!column.hidden"
+        :key="column.prop"
+        :label="column.label"
+        :width="column.width"
+        :align="column.align"
+        :fixed="column.fixed"
+        :show-overflow-tooltip="!!column.overflowTooltip"
+      >
+        <template slot-scope="scope">
+          <template v-if="treeStructure">
+            <span
+              v-if="spaceIconShow(index)"
+              v-for="item in scope.row._level"
+              :key="item"
+              class="ms-tree-space"
+            />
+            <div
+              v-if="toggleIconShow(index,scope.row)"
+              class="show-child-btn"
+              @click="toggle(scope.$index)"
+            >
+              <i
+                :class="[
+                  'el-icon el-icon-arrow-right',
+                  scope.row._expanded?'down':''
+                ]"
+              />
+            </div>
+            <span v-else-if="index===0" class="ms-tree-space"/>
+          </template>
+          <slot
+            :name="`cell-${column.prop}`"
+            :scope="scope"
+            :column="column"
+            :index="index"
+            :columns="columns"
+          >
+            {{ scope.row[column.prop] }}
+          </slot>
+        </template>
+      </el-table-column>
+    </el-table>
+  </template>
+  
+```
 ```bash
 npm i -S element-tree-table
 ```
