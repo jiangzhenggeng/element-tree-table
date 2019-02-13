@@ -1,6 +1,6 @@
 {
   "name": "element-tree-table",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A Vue.js project",
   "author": "蒋正庚 <jiangzg@glodon.com>",
   "private": false,
@@ -16,6 +16,7 @@
   "dependencies": {
     "element-ui": "^1.4.13",
     "jquery": "^3.3.1",
+    "mockjs": "^1.0.1-beta3",
     "vue": "^2.5.2"
   },
   "devDependencies": {

@@ -49,7 +49,7 @@
           :index="index"
           :columns="columns"
         >
-          {{ scope.row[column.prop] }}
+          <span v-html="scope.row[column.prop]"/>
         </slot>
       </template>
     </el-table-column>
