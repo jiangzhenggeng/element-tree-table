@@ -220,7 +220,7 @@ export default {
       })
 
       for (let i in temp) {
-        if (temp[i][this.parentKey]) {
+        if (temp[i][this.parentKey] && temp[i][this.parentKey] > 0) {
           if (!temp[temp[i][this.parentKey]].children) {
             temp[temp[i][this.parentKey]].children = []
           }
